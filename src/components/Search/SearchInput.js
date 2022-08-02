@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { useEmoji } from '../../context/EmojiContext'
 const SearchInput = () => {
-    const [title, setTitle] = useState("");
-    const { setText } = useEmoji();
+    const { text, setText } = useEmoji();
+    const handleChange = (e) => {
+        setText(e.target.value)
+    }
     useEffect(() => {
         const delayDebounceFn = setTimeout(() => {
-            setText(title)
+
         }, 200)
         return () => clearTimeout(delayDebounceFn)
-    }, [title])
+    }, [text])
 
     return (
         <>
             <form>
                 <input placeholder='Search emoji' className='search-input'
-                    value={title} type="text" onChange={e => setTitle(e.target.value)} />
+                    value={text} type="text" onChange={handleChange} />
             </form>
         </>
     )

@@ -2,7 +2,9 @@ import React from 'react'
 import { useEmoji } from '../../context/EmojiContext'
 import EmojiList from '../Emoji/EmojiList'
 const EmojiResult = () => {
-    const { filteredData } = useEmoji()
+    const { emojies, text } = useEmoji()
+    
+    const filteredData = emojies.filter(item => item.title.toLowerCase().includes(text.toLowerCase()))
     return (
         <div className='emoji-result'>
             {filteredData.map((emoji, index) => (

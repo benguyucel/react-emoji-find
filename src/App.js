@@ -10,7 +10,6 @@ function App() {
         <Header />
         <EmojiResult />
       </EmojiProvider>
-
     </div>
   );
 }
