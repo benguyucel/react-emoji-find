@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import CopyToClipboard from 'react-copy-to-clipboard'
 
 const EmojiList = ({ emoji }) => {
     const [symbol, setSymbol] = useState("");
@@ -9,10 +8,10 @@ const EmojiList = ({ emoji }) => {
     }
     return (
         <ul className='emoji-list'>
-            <li>
+            <li data-testid="row">
                 <div className="text">
-                    <span className='symbol'>{emoji.symbol}</span>
-                    <span className='title'>{emoji.title}</span>
+                    <span className='symbol'>{emoji?.symbol}</span>
+                    <span className='title'>{emoji?.title}</span>
                 </div>
 
                 <span className='copy' onClick={() => handleClick(emoji.symbol)}>Copy to clipboard</span>

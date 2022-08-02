@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useEmoji } from '../../context/EmojiContext'
 const SearchInput = () => {
     const { text, setText } = useEmoji();
