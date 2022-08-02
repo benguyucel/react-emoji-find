@@ -5,12 +5,9 @@ const EmojiResult = () => {
     const { filteredData } = useEmoji()
     return (
         <div className='emoji-result'>
-            <ul>
-                {filteredData.map((emoji, index) => (
-                    <EmojiList key={index} emoji={emoji} />
-                ))}
-
-            </ul>
+            {filteredData.map((emoji, index) => (
+                <EmojiList key={index} emoji={emoji} />
+            ))}
         </div>
     )
 }
